@@ -1,0 +1,1 @@
+export const convertInchesToCm = (inches: number): string => (inches / 10).toFixed(2);

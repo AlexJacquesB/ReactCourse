@@ -13,6 +13,14 @@ export interface PokemonSprites {
     back_shiny?: string;
 }
 
+export interface PokemonStat {
+    base_stat: number;
+    effort: number;
+    stat: {
+        name: string;
+        url: string;
+    };
+}
 export interface PokemonData {
     name: string;
     id: number;
@@ -20,4 +28,5 @@ export interface PokemonData {
     weight: number;
     types:  PokemonType[];
     sprites: PokemonSprites;
+    stats: PokemonStat[];
 }

@@ -1,0 +1,1 @@
+export const cocnvertLbsToKg = (lbs: number): string => (lbs / 10).toFixed(2);
