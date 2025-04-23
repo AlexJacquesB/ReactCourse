@@ -6,6 +6,7 @@ import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import { convertInchesToCm } from "../../utils/convertInchesToCm";
 import { PokemonSprites } from "../PokemonSprites/PokemonSprites";
 import { cocnvertLbsToKg } from "../../utils/convertLbsToKg";
+import { TypeIcons } from "../shared/TypeIcon/TypeIcon";
 
 export const PokemonInfo= () => {
     const { pokemonName } = useParams();
@@ -21,7 +22,10 @@ export const PokemonInfo= () => {
                 className="mx-auto w-72 h-72 mt-6" />
             </div>
             <div className="flex flex-col grow p-5 gap-3">
+                <div className="relative flex">
                 <h1 className="text-2xl"> {capitalizeFirstLetter(pokemonData?.name ?? "")} </h1>
+                <TypeIcons types={pokemonData?.types ?? []} />
+                </div>
                 <span> {`Weight: ${cocnvertLbsToKg( pokemonData?.weight ?? 0)} Kg`} </span>
                 <span> {`Height: ${convertInchesToCm( pokemonData?.height ?? 0)} M`} </span>
                 <div className="border-t-2 border-gray-300 mt-3 pt-3">
